@@ -1,3 +1,5 @@
+**a work in progress**
+
 # Fine-Tuning ViTs
 
 ## Configure venv using uv
@@ -19,10 +21,14 @@
 
 ### google/vit-base-patch16-224
 
-- consumed ~ ? GB of VRAM
+- consumed ~ 3 GB of VRAM
 
 ```bash
 TrainOutput(global_step=1350, training_loss=0.15539069290514346, metrics={'train_runtime': 137.439, 'train_samples_per_second': 98.225, 'train_steps_per_second': 9.823, 'total_flos': 1.046216869705728e+18, 'train_loss': 0.15539069290514346, 'epoch': 3.0})
+```
+
+```bash
+{'test_loss': 0.06985098868608475, 'test_accuracy': 0.978, 'test_runtime': 3.4191, 'test_samples_per_second': 292.471, 'test_steps_per_second': 73.118}
 ```
 
 ### dinov2 w reg - facebook/dinov2_with_registers-base
@@ -35,7 +41,15 @@ TrainOutput(global_step=1350, training_loss=0.15539069290514346, metrics={'train
 
 - consumed ~ 7 GB of VRAM
 
+- **please ignore aimv2 results till the correct base classes are used!**
+
+```bash
+TrainOutput(global_step=1350, training_loss=1.853396900318287, metrics={'train_runtime': 494.6235, 'train_samples_per_second': 27.293, 'train_steps_per_second': 2.729, 'total_flos': 2.928337017403392e+18, 'train_loss': 1.853396900318287, 'epoch': 3.0})
+```
+
 ---
 
 ## Refs
 - [Fine-Tuning Vision Transformer with Hugging Face and PyTorch](https://medium.com/@supersjgk/fine-tuning-vision-transformer-with-hugging-face-and-pytorch-df19839d5396)
+- [HF DINOv2 with Registers](https://huggingface.co/docs/transformers/en/model_doc/dinov2_with_registers)
+- [HF AIMv2 large-patch14-224](https://huggingface.co/apple/aimv2-large-patch14-224)

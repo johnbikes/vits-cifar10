@@ -64,10 +64,10 @@ def main(headless: bool = True):
         plt.imshow(img)
         plt.show()
 
-    # model_name = "google/vit-base-patch16-224"
+    model_name = "google/vit-base-patch16-224"
     # TODO: need program args - need to configure HF TOKEN
     # model_name = "Dinov2WithRegistersForImageClassification"
-    model_name = "apple/aimv2-large-patch14-224"
+    # model_name = "apple/aimv2-large-patch14-224"
     processor = ViTImageProcessor.from_pretrained(model_name) 
 
     mu, sigma = processor.image_mean, processor.image_std #get default mu,sigma
